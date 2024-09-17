@@ -8,3 +8,7 @@ Route::get('/', function () {
 });
 
 Route::get("posts", [PostController::class, 'index'])->name("posts.index");
+
+// create method
+Route::get("posts/create", [PostController::class, 'create'])->name("posts.create");
+// Route::post("posts/create", [PostController::class, 'store'])->name("posts.store");
