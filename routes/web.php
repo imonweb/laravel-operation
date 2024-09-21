@@ -15,3 +15,4 @@ Route::post("posts/create", [PostController::class, 'store'])->name("posts.store
 
 // update method
 Route::get("posts/{id}/edit", [PostController::class, 'edit'])->name("posts.edit");
+Route::put("posts/{id}", [PostController::class, 'update'])->name("posts.update");
