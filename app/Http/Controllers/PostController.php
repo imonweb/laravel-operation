@@ -59,4 +59,13 @@ class PostController extends Controller
         // dd($request->all());
     }
 
+    public function show(Request $request, $id)
+    {
+        $post = Post::find($id);
+
+        return view("posts.show", compact("post"));
+
+        dd($request->all());
+    }
+
 }
