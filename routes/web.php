@@ -19,3 +19,6 @@ Route::put("posts/{id}", [PostController::class, 'update'])->name("posts.update"
 
 // display method
 Route::get("posts/{id}", [PostController::class, 'show'])->name("posts.show");
+
+// delete method
+Route::delete("posts/{id}", [PostController::class, 'destroy'])->name("posts.destroy");

@@ -23,7 +23,7 @@
               <th>ID</th>
               <th>Title</th>
               <th>Body</th>
-              <th>Action</th>
+              <th width="250px">Action</th>
             </thead>
             <tbody>
                @foreach($posts as $post)
@@ -31,9 +31,14 @@
                   <td>{{ $post->id }}</td>
                   <td>{{ $post->title }}</td>
                   <td>{{ $post->body }}</td>
-                  <td>
+                  <td class="m-3"> 
                     <a href="{{ route('posts.show', $post->id) }}" class="btn btn-primary">Show</a>
                     <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-info">Edit</a>
+                     <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
+                      @csrf 
+                      @method('DELETE')
+                      <button class="btn btn-danger">Delete</button>
+                    </form>
                   </td>
                 </tr>
               @endforeach

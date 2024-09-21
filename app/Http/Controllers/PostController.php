@@ -68,4 +68,13 @@ class PostController extends Controller
         dd($request->all());
     }
 
+    public function destroy(Request $request, $id)
+    {
+        $post = Post::find($id);
+
+        $post->delete();
+
+        return redirect()->route("posts.index")->with("success", "Post deleted successfully");
+    }
+
 }
