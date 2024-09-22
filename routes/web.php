@@ -7,6 +7,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+ 
 Route::get("posts", [PostController::class, 'index'])->name("posts.index");
 
 // create method
@@ -22,3 +23,8 @@ Route::get("posts/{id}", [PostController::class, 'show'])->name("posts.show");
 
 // delete method
 Route::delete("posts/{id}", [PostController::class, 'destroy'])->name("posts.destroy");
+ 
+
+/*  Resource route */
+
+// Route::resource("posts", PostController::class);
